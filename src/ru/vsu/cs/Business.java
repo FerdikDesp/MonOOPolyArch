@@ -61,11 +61,9 @@ public class Business extends Cell {
             System.out.println("Бизнес никем не занят! Купить бизнес? Цена: " + this.getCost() + "\n1. Да\t2. Нет");
             Scanner scan = new Scanner(System.in);
             int action = scan.nextInt();
-            switch (action) {
-                case 1 -> {
-                    player.setMoney(player.getMoney() - this.getCost());
-                    this.setOwner(player);
-                }
+            if (action == 1) {
+                player.setMoney(player.getMoney() - this.getCost());
+                this.setOwner(player);
             }
         } else if (this.owner == player) {
             System.out.println("Игрок " + player.getName() + " попал на собственный бизнес! Пропуск хода.");

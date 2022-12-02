@@ -7,6 +7,8 @@ public class Player {
     private Cell currentCell;
     private boolean isArrested;
     private boolean isArrestedNow;
+    private int lostTriesUnArrest;
+    private int winTryUnArrest;
 
     public Player(String name, int money) {
         this.name = name;
@@ -52,5 +54,21 @@ public class Player {
 
     public void setArrestedNow(boolean arrestedNow) {
         isArrestedNow = arrestedNow;
+    }
+
+    public int getLostTriesUnArrest() {
+        return lostTriesUnArrest;
+    }
+
+    public void setLostTriesUnArrest(int lostTriesUnArrest) {
+        this.lostTriesUnArrest = lostTriesUnArrest;
+    }
+
+    public int getWinTryUnArrest() {
+        return winTryUnArrest;
+    }
+
+    public void setWinTryUnArrest(int winTryUnArrest) {
+        this.winTryUnArrest = winTryUnArrest;
     }
 }

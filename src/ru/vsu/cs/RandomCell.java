@@ -32,33 +32,47 @@ public class RandomCell extends Cell {
         int randNumber = random.nextInt(9) + 1;
 
         switch (randNumber) {
-            case 1 -> System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " теряет ход!");
-            case 2 -> {
+            case 1: System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " теряет ход!");  break;
+            case 2: {
                 System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " получает 750$!");
                 player.setMoney(player.getMoney() + 750);
+                break;
             }
-            case 3 -> {
+            case 3: {
                 System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " получает 1500$ за выигрыш в лотерее!");
                 player.setMoney(player.getMoney() + 1500);
+                break;
             }
-            case 4 -> {
+            case 4: {
                 System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " теряет 1000$!");
                 player.setMoney(player.getMoney() - 1000);
+                break;
             }
-            case 5 -> {
+            case 5: {
                 System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " теряет 250$!");
                 player.setMoney(player.getMoney() - 250);
+                break;
             }
-            case 6 -> {
+            case 6: {
                 System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " получает 500$!");
                 player.setMoney(player.getMoney() + 500);
+                break;
             }
-            case 7 -> System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " перемещается!");
-            case 8 -> {
+            case 7: {
+                System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " перемещается!");
+                break;
+            }
+            case 8: {
                 System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " получает 1500$ за второе место в конкурсе красоты!");
                 player.setMoney(player.getMoney() + 1500);
+                break;
             }
-            case 9 -> System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " арестован!");
+            case 9: {
+                System.out.println("[RANDOMCELL.RUN] Игрок " + player.getName() + " арестован!");
+                player.setArrested(true);
+                player.setArrestedNow(true);
+                break;
+            }
         }
 
     }

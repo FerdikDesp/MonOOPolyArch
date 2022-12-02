@@ -39,8 +39,21 @@ public class Game {
         System.out.println("Перемещён в " + player.getCurrentCell().getName() + ", номер ячейки " + cells.indexOf(player.getCurrentCell()));
     }
 
+    public void changePlayerCell(Player player, Cell cell) {
+        System.out.print("[MOVEPLAYER] Игрок " + player.getName() + " находится в " + player.getCurrentCell().getName() + ", номер ячейки " + cells.indexOf(player.getCurrentCell()) + ". ");
+        //НАЧАЛО ПЕРЕНОСА ИГРОКА НА ДРУГУЮ ЯЧЕЙКУ
+        player.getCurrentCell().removePlayer(player);
+        cell.setPlayer(player);
+        //КОНЕЦ ПЕРЕНОСА ИГРОКА НА ДРУГУЮ ЯЧЕЙКУ
+        System.out.println("Перемещён в " + player.getCurrentCell().getName() + ", номер ячейки " + cells.indexOf(player.getCurrentCell()));
+    }
+
     public void runCell(Player player) {
         Cell cell = cells.get(cells.indexOf(player.getCurrentCell()));
         cell.run(player);
+        if (player.isArrestedNow()) {
+            changePlayerCell(player, cells.get(10));
+        }
+        player.setArrestedNow(false);
     }
 }
